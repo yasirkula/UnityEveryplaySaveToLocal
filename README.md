@@ -10,7 +10,7 @@ As video flipping operation on iOS can take some time for long videos, there are
 
 - `EveryplayLocalSave.SaveTo( string path )`: synchronously saves the video to **path**. Returns **true** if the video is saved successfully, **false** otherwise. One thing to note here is that the path is *string.Format*'ed to avoid overwriting an existing video file, if desired. Just put a **{0}** in your path and it will be replaced with a unique number, starting from 1. For example, if your path ends with "*my video {0}.mp4*", the videos will be saved as "*my video 1.mp4*", "*my video 2.mp4*" and so on. If you don't provide a *{0}* in your path and a file happens to exist at that path, it will be overwritten.
 
-- `EveryplayLocalSave.SaveTo( string path )`: asynchronously saves the video to **path**. Returns an **IEnumerator** object that you can **yield** in coroutines (see example code below).
+- `EveryplayLocalSave.SaveToAsync( string path )`: asynchronously saves the video to **path**. Returns an **IEnumerator** object that you can **yield** in coroutines (see example code below).
 
 The plugin may alter your **path** string if it contains a *{0}* or a if a filename is not provided in the path. Therefore, use **EveryplayLocalSave.SavedPath** to access the saved file's path correctly. If it is *null*, either the video was not saved correctly or it is still being saved (async call). Also, you can not issue more than one save commands at a time and thus, it is recommended to check the value of **EveryplayLocalSave.IsBusy** before attempting to save the video to disk.
 
