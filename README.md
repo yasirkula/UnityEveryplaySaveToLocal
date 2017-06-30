@@ -14,7 +14,7 @@ As video flipping operation on iOS can take some time for long videos, there are
 
 The plugin may alter your **path** string if it contains a *{0}* or if a filename is not provided in the path. Therefore, use **EveryplayLocalSave.SavedPath** to access the saved file's path correctly. If it is *null*, either the video was not saved correctly or it is still being saved (async call). Note that you can not issue more than one save commands at a time; therefore, it is recommended to check the value of **EveryplayLocalSave.IsBusy** before attempting to save the video to disk.
 
-**NOTE:** in order to ensure that you save the most recent Everyplay recording to your local storage, call these functions after **Everyplay.RecordingStopped** event is called.
+**NOTE:** in order to ensure that you save the most recent Everyplay recording to your local storage, call these functions after **Everyplay.RecordingStopped** event is triggered.
 
 ## Example Code
 The following code snippet saves an Everyplay session to *Application.persistentDataPath\saved video {0}.mp4* as soon as the recording has finished. 
