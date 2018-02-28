@@ -1,5 +1,5 @@
 # Unity Everyplay Save to Local
-This is a little plugin to help you save your **Everyplay** recordings to your mobile device, instead of having to upload them to Everyplay servers. It it tested with **Everyplay Release 2160-1580** on both Android and iOS.
+This is a little plugin to help you save your **Everyplay** recordings to your mobile device, instead of having to upload them to Everyplay servers. It it tested with **Everyplay Release 2160-1580** on both Android and iOS. Please note that **FaceCam** features are not supported and these additional media (microphone input and/or camera feed) will simply be ignored.
 
 Everyplay internally saves its last session to a temporary folder in **mp4** format. However, for some reason, the video is rendered upside down on iOS devices when *OpenGLES* Graphics API is used instead of *Metal*. This script takes that fact into consideration and flips the video in such a case. So, the saved video should always be correctly oriented.
 
